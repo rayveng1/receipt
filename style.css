@@ -6,6 +6,7 @@
 
 body{
     margin: 4rem;
+    min-width: 50rem;
 }
 
 h1, h2{
