@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root{
-    --primary-color:lightgreen;
+    --primary-color:#238BE8;
 }
 
 body{
@@ -32,6 +32,11 @@ span{
 
 header{
     margin-bottom:3rem;
+}
+
+.company_logo{
+    flex:1;
+    max-width: 25rem;
 }
 
 .billed_to_section, .invoice_info, .description, .invoice_category{
