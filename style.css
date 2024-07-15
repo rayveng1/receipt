@@ -8,7 +8,6 @@ body{
     margin: 4rem;
     min-width: 50rem;
     max-width: 55rem;
-    justify-content: center;
 }
 
 h1, h2{
@@ -58,7 +57,7 @@ header{
     border-bottom: black solid .1rem;
 }
 
-.invoice_lines, .desc_invoice_lines{
+.invoice_lines, .desc_invoice_lines, .subtotal{
     outline: 0;
     border-width: 0 0 0 0;
     border-bottom: black solid .1rem;

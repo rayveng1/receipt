@@ -1,0 +1,1 @@
+console.log(Globalize("$13.00"));
