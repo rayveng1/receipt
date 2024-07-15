@@ -1,15 +1,22 @@
 const TAX_RATE = .0825
 
 function onPriceEnter(element){
-    const el = document.querySelector(".subtotal");
-    let elValue = ((el.value)[0] == '$') ? Number((el.value).slice(1)) : Number(el.value);
-    el.value = (Number(elValue) + Number(element.value)).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    const el = document.querySelector(".subtotal");     
+    el.value = (Number(convertMoneyToNumber(element.value)) + Number(convertMoneyToNumber(el.value))).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
 function onSubTotalChange(element){
-    const el = document.querySelector(".tax");
+    const tax = document.querySelector(".tax");
     const total = document.querySelector(".total");
-    let number = ((element.value)[0] == '$') ? Number((element.value).slice(1)) : Number(element.value);
-    el.value = (number * TAX_RATE).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-    total.value = (number + (number * TAX_RATE)).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+    tax.value = (Number(convertMoneyToNumber(element.value)) * TAX_RATE).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+    total.value = (Number(convertMoneyToNumber(element.value)) + (Number(convertMoneyToNumber(element.value)) * TAX_RATE)).toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+}
+
+function convertMoneyToNumber(money){
+    let newNum = "";
+    let noMoneySign = ((money)[0] == '$') ? (money).slice(1) : money;
+    noMoneySign.split("").forEach(element => {
+        newNum += (element !== ',') ? element : '';
+    });
+    return newNum;
 }
