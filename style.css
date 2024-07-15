@@ -8,6 +8,7 @@ body{
     margin: 4rem;
     min-width: 50rem;
     max-width: 55rem;
+    justify-content: center;
 }
 
 h1, h2{
