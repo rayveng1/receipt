@@ -1,6 +1,7 @@
 const TAX_RATE = .0825
 
 function onPriceEnter(element){
+    element.value = Number(convertMoneyToNumber(element.value)).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     const el = document.querySelector(".subtotal");     
     el.value = (Number(convertMoneyToNumber(element.value)) + Number(convertMoneyToNumber(el.value))).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
