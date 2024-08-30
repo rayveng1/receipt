@@ -96,7 +96,7 @@ main{
     max-width: 8rem;
 }
 
-.invoice_calc{
+.invoice_calc, .invoice_calc_taxes{
     display: flex;
     justify-content: flex-end;
 }
