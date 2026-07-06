@@ -57,7 +57,7 @@ header{
     border-bottom: black solid .1rem;
 }
 
-.invoice_lines, .desc_invoice_lines, .subtotal{
+.invoice_lines, .invoice_lines_price, .desc_invoice_lines, .subtotal{
     outline: 0;
     border-width: 0 0 0 0;
     border-bottom: black solid .1rem;

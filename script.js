@@ -4,7 +4,14 @@ function onPriceEnter(element){
     element.value = Number(convertMoneyToNumber(element.value)).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     const el = document.querySelector(".subtotal");
     const elNoTax = document.querySelector(".total");
-    el.value = (Number(convertMoneyToNumber(element.value)) + Number(convertMoneyToNumber(el.value))).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    el.value = 0;
+    var total = 0;
+    document.querySelectorAll(".invoice_lines_price").forEach((p) =>
+        {
+            total += !(p.value) ? 0 : parseFloat(p.value.replace(/[^0-9-.]/g, ''));
+        });
+    el.value = total;
+    el.value = Number(convertMoneyToNumber(el.value)).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     elNoTax.value = el.value;
 }
 
